@@ -44,6 +44,7 @@ export class AuthInterceptor implements HttpInterceptor {
     processResponse(event: any): ObservableInput<any> {
         if (event instanceof HttpResponse) {
             let headers = event.headers;
+            console.log('响应headers=====>', headers);
             if (headers) {
                 let code = headers.get('code');
                 if (code && code != '0') {
